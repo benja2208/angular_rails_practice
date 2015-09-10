@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Instagram Challenge
 ===================
 
@@ -20,3 +21,6 @@ As usual please start by
 Your challenge is to build Instagram using Rails. You'll need **users** who can post **pictures**, write **comments** on pictures and **like** a picture. Style it like Instagram's website (or more awesome).
 
 Bonus if you can add filters!
+=======
+# boris 
+>>>>>>> 58c8f41fa09d0a478838a931bdb377f90ccd4d9c
