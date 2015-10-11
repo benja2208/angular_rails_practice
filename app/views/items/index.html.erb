@@ -16,6 +16,15 @@
         <h4><%= item.store %></h4>
         <h5>£<%= sprintf '%.2f', item.price %></h5>
         <h5><%= item.rating %></h5>
+        <% if item.comments.any? %>
+        <% item.comments.each do |comment| %>
+          <p><%= comment.thoughts %></p>
+        <% end %>
+      <% end %>
+        <%= form_for [item, item.comments.new] do |f| %>
+           <%= f.text_field :thoughts, placeholder: 'Add a comment...' %>
+           <%= f.submit 'Leave Comment' %>
+         <% end %>
       <% end %>
     <% else %>
       <p>No items yet</p>

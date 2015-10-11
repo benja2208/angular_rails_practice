@@ -5,14 +5,14 @@ class ItemsController < ApplicationController
 
   def new
   	@item = Item.new
-  end 
+  end
 
   def create
   	Item.create(item_params)
   	redirect_to items_path
-  end 
+  end
 
   def item_params
   	params.require(:item).permit(:description, :store, :price)
-  end 
+  end
 end
