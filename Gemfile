@@ -5,6 +5,7 @@ gem 'paperclip'
 gem 'rails', '4.2.4'
 
 gem 'haml-rails'
+gem 'shoulda'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
