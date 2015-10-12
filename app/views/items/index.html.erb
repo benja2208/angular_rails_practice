@@ -15,6 +15,7 @@
         <div class="time-ago">
           <%= time_ago_in_words item.created_at %>
         </div>
+
         <h2><%= item.description %></h2>
         <h4><%= item.store %></h4>
         <% if item.price === nil %>
