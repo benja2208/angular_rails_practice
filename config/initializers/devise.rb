@@ -1,3 +1,6 @@
+require "omniauth-facebook"
+
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -233,8 +236,6 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
-
-  require "omniauth-facebook"
 
   config.omniauth :facebook, Rails.application.secrets[:facebook_app_id], Rails.application.secrets[:facebook_app_secret], scope: 'email', info_fields: 'email, name'
 

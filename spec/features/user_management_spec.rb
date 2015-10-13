@@ -15,17 +15,13 @@ feature "User can sign in and out" do
   end
 
   context "user signed in on the homepage" do
-    # before(:each) do
-    #   user =  FactoryGirl.build(:user)
-    #   visit('/')
-    #   click_link('Sign up')
-    #   sign_up(user)
-    # end
-
     before(:each) do
-      user = build :user
+      user =  build(:user)
+      visit('/')
+      click_link('Sign up')
       sign_up(user)
     end
+
 
     it "should see 'sign out' link" do
       expect(page).to have_link('Sign out')
