@@ -24,6 +24,16 @@ feature 'items' do
   		expect(page).to have_content '£12.00'
   		expect(page).to have_content 'Zara'
   	end
+  end
 
+  context 'liking items' do
+    scenario 'user can like an item', js: true do
+      user = build :user
+      sign_up(user)
+      upload_photo
+      visit '/items'
+      click_link 'like'
+      expect(page).to have_content('1 like')
+    end
   end
 end

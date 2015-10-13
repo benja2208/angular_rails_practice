@@ -23,6 +23,17 @@
         <% else %>
           <h5> £<%= sprintf '%.2f', item.price %></h5>
         <% end %>
+        <% if user_signed_in? %>
+          <div>
+            <%= link_to "Like", item_likes_path(item), class: 'likes-link' %>
+            <span class="likes_count">
+              <%= item.likes.count %>
+            </span>
+            <span class="likes_pluralisation">
+              <%= 'like'.pluralize(item.likes.count) %>
+            </span>
+          </div>
+        <% end %>
         <h5><%= item.rating %></h5>
         <% if item.comments.any? %>
         <% item.comments.each do |comment| %>
