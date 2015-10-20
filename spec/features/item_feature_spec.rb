@@ -16,6 +16,7 @@ feature 'items' do
       allow_any_instance_of(Paperclip::Attachment).to receive(:url).and_return("/photo.png")
   		fill_in 'Description', with: 'my first photo'
   		fill_in 'Price', with: '12'
+      select '3', from: 'Rating'
   		select 'Zara', from: 'Store'
   		click_button 'Add item'
   		expect(current_path).to eq('/items')
@@ -23,6 +24,7 @@ feature 'items' do
   		expect(page).to have_content 'my first photo'
   		expect(page).to have_content '£12.00'
   		expect(page).to have_content 'Zara'
+      expect(page).to have_content '3'
   	end
   end
 
@@ -36,4 +38,5 @@ feature 'items' do
       expect(page).to have_content('1 like')
     end
   end
+
 end

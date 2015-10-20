@@ -34,7 +34,7 @@
             </span>
           </div>
         <% end %>
-        <h5><%= item.rating %></h5>
+        <h5><%= item.rating %>/5</h5>
         <% if item.comments.any? %>
         <% item.comments.each do |comment| %>
           <p><%= comment.thoughts %></p>
