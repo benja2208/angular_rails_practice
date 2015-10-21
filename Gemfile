@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-gem 'ratyrate'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'paperclip'
