@@ -17,6 +17,7 @@ feature 'items' do
   		fill_in 'Description', with: 'my first photo'
   		fill_in 'Price', with: '12'
       select '3', from: 'Rating'
+      select 'Jackets and Coats', from: 'Category'
   		select 'Zara', from: 'Store'
   		click_button 'Add item'
   		expect(current_path).to eq('/items')
@@ -26,6 +27,12 @@ feature 'items' do
   		expect(page).to have_content 'Zara'
       expect(page).to have_content '3'
   	end
+  end
+
+  context 'viewing items' do
+    xscenario 'user can view items uploaded' do
+
+    end
   end
 
   context 'liking items' do
