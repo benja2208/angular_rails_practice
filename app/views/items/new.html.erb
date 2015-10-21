@@ -4,6 +4,8 @@
 	<%= f.text_field :description, :required => true %>
 	<%= f.label :store %>
 	<%= f.select :store,['Zara', 'H&M', 'Topshop'], :required => true %>
+	<%= f.label :rating %>
+  <%= f.select :rating, (1..5) %>
   <%= f.label :category %>
   <%= f.select :category,['Jackets and Coats', 'Dresses', 'Shoes'], :required => true %>
 	<%= f.label :price %>
