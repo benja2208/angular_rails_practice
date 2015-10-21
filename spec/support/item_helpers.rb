@@ -4,6 +4,7 @@ def upload_photo
   allow_any_instance_of(Paperclip::Attachment).to receive(:url).and_return("/photo.png")
   fill_in 'Description', with: 'my first photo'
   fill_in 'Price', with: '12'
+  select 'Jackets and Coats', from: 'Category'
   select 'Zara', from: 'Store'
   click_button 'Add item'
 end
