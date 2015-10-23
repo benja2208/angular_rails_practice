@@ -7,36 +7,19 @@ end
 
 
 describe Relationship, type: :model do 
-  def setup
-    @relationship = Relationship.new(follower_id: 1, followed_id: 2)
-  end 
+  @relationship = Relationship.new(follower_id: 1, followed_id: 2)
 
-  it "should be valid" do 
+  xit "should be valid" do 
     expect(@relationship).to be_valid
   end 
 
-  it "should require a follower_id" do 
-    expect(@relationship).to_not be_empty
+  xit "should require a follower_id" do 
+    @relationship.follower_id = nil
+    expect(@relationship).to_not be_valid
+  end 
+
+  xit "should require a followed_id" do 
+    @relationship.followed_id = nil
+    expect(@relationship).to_not be_valid
   end 
 end 
-
-class RelationshipTest < ActiveSupport::TestCase
-
-  def setup
-    @relationship = Relationship.new(follower_id: 1, followed_id: 2)
-  end
-
-  test "should be valid" do
-    assert @relationship.valid?
-  end
-
-  test "should require a follower_id" do
-    @relationship.follower_id = nil
-    assert_not @relationship.valid?
-  end
-
-  test "should require a followed_id" do
-    @relationship.followed_id = nil
-    assert_not @relationship.valid?
-  end
-end
