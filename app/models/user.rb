@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :items
   has_many :comments, dependent: :destroy
+  has_many :active_relationships, class_name: "Relationship",
+                                  foreign_key: "follower_id",
+                                  dependent: :destroy
 
   validates :user_name, presence: true, length: {minimum: 4, maximum: 16}
 
@@ -27,3 +30,5 @@ class User < ActiveRecord::Base
   end
 
 end
+
+
