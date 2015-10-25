@@ -9,14 +9,23 @@ class UsersController < ApplicationController
 		@users = User.all 
 	end
 
+	def logged_in_user
+    unless user_signed_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
+  end
+
 	def following 
 		@title = "Following"
-		render 'show_follow'
+		@user  = User.find(params[:id])
 		@users = @user.following.paginate(page: params[:page])
+		render 'show_follow'
 	end 
 
 	def followers
     @title = "Followers"
+    @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
 	end 

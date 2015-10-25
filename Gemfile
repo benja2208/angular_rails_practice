@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'paperclip'
