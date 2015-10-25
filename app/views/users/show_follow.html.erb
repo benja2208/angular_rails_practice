@@ -1,0 +1,11 @@
+<h1><%= @user.user_name %></h1>
+  <span><%= link_to "view my profile", @user %></span>
+<%= render 'stats' %>
+<h3><%= @title %></h3>
+  <% if @users.any? %>
+    <ul>
+      	<%= render @users %>
+    </ul>
+  <% end %>
+  
+
